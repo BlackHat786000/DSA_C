@@ -1,0 +1,49 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+    
+    int a = 10; //data variable
+    int *p; // declare pointer variable using *
+    p = &a; // assign address of a to pointer var (p) using &
+    
+    cout<<a<<endl;
+    cout<<*p<<endl; // dereferencing pointer using * (gets the value at stored address)
+    
+    int arr[5] = {05,20,30,40,50};
+    int *p1;
+    p1=arr;  // & not used in case of arrays since array itself points to starting address
+    p1[0] = 15;
+    
+    for(int i=0;i<5;i++) {
+        //cout<<arr[i]<<endl;
+        cout<<p1[i]<<endl; // p1 can be used as array name arr
+    }
+    
+    int *pointer2;
+    //pointer2 = (int *) malloc(5*sizeof(int));
+    pointer2 = new int[5]; // pointer2 pointing to memory allocated in heap (int array of size 5)
+    
+    pointer2[0]=1; pointer2[1]=2; pointer2[2]=3; pointer2[3]=4; pointer2[4]=5;
+    
+    for(int j=0;j<5;j++) {
+        cout<<pointer2[j]<<endl;
+    }
+    
+    return 0;
+}
+
+
+
+notes
+- despite of datatype of pointers, they take a fixed amount of memory (8 bytes or 4 bytes)

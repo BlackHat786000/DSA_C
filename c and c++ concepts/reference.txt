@@ -9,20 +9,15 @@ Code, Compile, Run and Debug online from anywhere in world.
 #include <iostream>
 using namespace std;
 
-struct Rectangle {
-    int length;
-    int breadth;
-};
-
 int main()
 {
     
-    struct Rectangle r = {10,20};
-    r.length = 30;
-    r.breadth = 40;
+    int a = 10; //data variable
+    int &r = a; // reference is just another name of variable and dosen't consume any memory
     
-    cout<<r.length<<endl;
-    cout<<r.breadth<<endl;
+    cout<<r<<endl;
+    r++;
+    cout<<a<<endl;
 
     return 0;
 }
