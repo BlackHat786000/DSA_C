@@ -1,0 +1,96 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
+
+struct Rectangle {
+    int length;
+    int breadth;
+};
+
+
+// CALL BY VALUE
+// void fun(struct Rectangle r1) {
+//     r1.length=30;
+//     r1.breadth=40;
+//     cout<<"length (fun) "<<r1.length<<endl;
+//     cout<<"breadth (fun) "<<r1.breadth<<endl;
+// }
+
+// int main() {
+//     struct Rectangle r = {10,20};
+//     fun(r);
+//     cout<<"length (main) "<<r.length<<endl;
+//     cout<<"breadth (main) "<<r.breadth<<endl;
+
+//     return 0;
+// }
+
+
+// CALL BY ADDRESS
+// void fun(struct Rectangle *r1) {
+//     r1->length=30;
+//     r1->breadth=40;
+//     cout<<"length (fun) "<<r1->length<<endl;
+//     cout<<"breadth (fun) "<<r1->breadth<<endl;
+// }
+
+// int main() {
+//     struct Rectangle r = {10,20};
+//     fun(&r);
+//     cout<<"length (main) "<<r.length<<endl;
+//     cout<<"breadth (main) "<<r.breadth<<endl;
+    
+//     return 0;
+// }
+
+
+// CALL BY REFERENCE
+// void fun(struct Rectangle &r1) {
+//     r1.length=30;
+//     r1.breadth=40;
+//     cout<<"length (fun) "<<r1.length<<endl;
+//     cout<<"breadth (fun) "<<r1.breadth<<endl;
+// }
+
+// int main() {
+//     struct Rectangle r = {10,20};
+//     fun(r);
+//     cout<<"length (main) "<<r.length<<endl;
+//     cout<<"breadth (main) "<<r.breadth<<endl;
+    
+//     return 0;
+// }
+
+
+struct Rectangle * fun() {
+    struct Rectangle *p;
+    p = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+    
+    p->length=15;
+    p->breadth=25;
+    
+    return p;
+}
+
+int main() {
+    struct Rectangle *ptr;
+    ptr = fun();
+    cout<<"length: "<<ptr->length<<endl;
+    cout<<"breadth: "<<ptr->breadth<<endl;
+    
+    return 0;
+}
+
+
+notes:
+
+- array inside a structure can be passed as value
